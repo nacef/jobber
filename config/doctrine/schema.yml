@@ -1,0 +1,72 @@
+JobOffer:
+  actAs:
+    Timestampable:
+  columns:
+    job_reference: string(50)
+    internal_title: string(255)
+    external_title: string(255)
+    status: integer
+    openings_number: integer
+    openings_remaining: integer
+    start_date: timestamp
+    end_date: timestamp
+    asap: boolean
+    opening_cause: integer
+    is_active: boolean
+    cause_comments: clob
+    job_family: integer
+    location: integer
+    assignment: integer
+    mission: clob
+    required_experience: integer
+#    required_language_skills: { type:  }
+#    required_skills: { type:  }
+#    required_experience_description: { type:  }
+#    required_skills_description: { type:  }
+#    required_education_description: { type:  }
+    is_budgeted: boolean
+    salary: integer
+#    contract_kind: { type:  }
+  relations:
+    Location:
+      local: location
+      foreign: id
+      foreignType: one
+    Assignment:
+      local: assignment
+      foreign: id
+      foreignType: one
+    Experience:
+      local: required_experience
+      foreign: id
+      foreignType: one
+    RequiredStudies:
+      class: Study
+      local: job_offer_id
+      foreign: study_id
+      refClass: JobOfferStudies
+
+Location:
+  columns:
+    name: string(50)
+
+Assignment:
+  columns:
+    name: string(50)
+
+Experience:
+  columns:
+    name: string(50)
+
+Study:
+  columns:
+    name: string(50)
+    
+JobOfferStudies:
+  columns:
+    job_offer_id:
+      type: integer
+      primary: true
+    study_id:
+      type: integer
+      primary: true

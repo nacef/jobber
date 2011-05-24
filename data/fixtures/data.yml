@@ -1,0 +1,42 @@
+Assignment:
+  Assignment_1:
+    name: Siege
+  Assignment_2:
+    name: Entrepot
+  Assignment_3:
+    name: Nord
+  Assignment_4:
+    name: Sud
+  Assignment_5:
+    name: Est
+Study:
+  Study_1:
+    name: Baccalauréat
+  Study_2:
+    name: Technicien
+  Study_3:
+    name: Maitrise
+  Study_4:
+    name: Bac+5
+  Study_5:
+    name: Master
+Experience:
+  Experience_1:
+    name: Débutant
+  Experience_2:
+    name: '1 à 2 ans'
+  Experience_3:
+    name: '3 à 5 ans'
+  Experience_4:
+    name: '+ de 5 ans'
+Location:
+  Location_1:
+    name: Tunis
+  Location_2:
+    name: Bizerte
+  Location_3:
+    name: Nabeul
+  Location_4:
+    name: Monastir
+  Location_5:
+    name: Sousse
