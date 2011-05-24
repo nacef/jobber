@@ -1,3 +1,125 @@
+Application:
+  actAs:
+    Timestampable:
+  columns:
+    civil_status: integer
+    first_name: string(50)
+    last_name: string(50)
+    birth_date: date
+    nationality_1: integer
+    nationality_2: integer
+    tel: string(50)
+    mobile: string(50)
+    email: string(50)
+    is_employed: boolean
+    current_job: string(255)
+    availability_period: integer
+    availability_infos: string(255)
+    activity: integer
+    current_job: string(255)
+    cv: string(255)
+    cover_letter: string(255)
+    work_experience: integer
+    work_experience_description: clob
+    education_description: clob
+    job_wished: integer
+    wished_location: string(255)
+    is_mobile: boolean
+    mobility_area: integer
+    wished_salary: integer
+    job_offer_id: integer
+  relations:
+    JobOffer:
+      local: job_offer_id
+      foreign: id
+      foreignType: one
+    FirstNationality:
+      class: Nationality
+      local: nationality_1
+      foreign: id
+      foreignType: one
+    SecondNationality:
+      class: Nationality
+      local: nationality_2
+      foreign: id
+      foreignType: one
+    AvailabilityPeriod:
+      local: availability_period
+      foreign: id
+      foreignType: one
+    Activity:
+      class: JobFamily
+      local: activity
+      foreign: id
+      foreignType: one
+    Experience:
+      local: work_experience
+      foreign: id
+      foreignType: one
+    Studies:
+      class: Study
+      local: application_id
+      foreign: study_id
+      refClass: ApplicantStudies
+    Skills:
+      class: Skill
+      local: application_id
+      foreign: skill_id
+      refClass: ApplicantSkills
+    Languages:
+      class: Language
+      local: application_id
+      foreign: language_id
+      refClass: ApplicantLanguageSkills
+    JobWished:
+      class: ContractKind
+      local: job_wished
+      foreign: id
+      foreignType: one
+    MobilityArea:
+      local: mobility_area
+      foreign: id
+      foreignType: one
+
+ApplicantStudies:
+  columns:
+    application_id:
+      type: integer
+      primary: true
+    study_id:
+      type: integer
+      primary: true
+
+ApplicantLanguageSkills:
+  columns:
+    application_id:
+      type: integer
+      primary: true
+    language_id:
+      type: integer
+      primary: true
+
+ApplicantSkills:
+  columns:
+    application_id:
+      type: integer
+      primary: true
+    skill_id:
+      type: integer
+      primary: true
+
+MobilityArea:
+  columns:
+    name: string(50)
+
+AvailabilityPeriod:
+  columns:
+    name: string(50)
+
+Nationality:
+  columns:
+    name: string(50)
+
 JobOffer:
   actAs:
     Timestampable:
@@ -8,8 +130,8 @@ JobOffer:
     status: integer
     openings_number: integer
     openings_remaining: integer
-    start_date: timestamp
-    end_date: timestamp
+    start_date: date
+    end_date: date
     asap: boolean
     opening_cause: integer
     is_active: boolean
@@ -19,15 +141,17 @@ JobOffer:
     assignment: integer
     mission: clob
     required_experience: integer
-#    required_language_skills: { type:  }
-#    required_skills: { type:  }
-#    required_experience_description: { type:  }
-#    required_skills_description: { type:  }
-#    required_education_description: { type:  }
+    required_experience_description: clob
+    required_skills_description: clob
+    required_education_description: clob
     is_budgeted: boolean
     salary: integer
-#    contract_kind: { type:  }
+    contract_kind: integer
   relations:
+    Status:
+      local: status
+      foreign: id
+      foreignType: one
     Location:
       local: location
       foreign: id
@@ -45,6 +169,44 @@ JobOffer:
       local: job_offer_id
       foreign: study_id
       refClass: JobOfferStudies
+    RequiredLanguageSkills:
+      class: Language
+      local: job_offer_id
+      foreign: language_id
+      refClass: JobLanguageSkills
+    JobFamily:
+      local: job_family
+      foreign: id
+      foreignType: one
+    RequiredSkills:
+      class: Skill
+      local: job_offer_id
+      foreign: skill_id
+      refClass: JobRequiredSkills
+    ContractKind:
+      local: contract_kind
+      foreign: id
+      foreignType: one
+
+JobFamily:
+  columns:
+    name: string(50)
+
+ContractKind:
+  columns:
+    name: string(50)
+
+Skill:
+  columns:
+    name: string(50)
+
+JobFamily:
+  columns:
+    name: string(50)
+
+Status:
+  columns:
+    name: string(50)
 
 Location:
   columns:
@@ -70,3 +232,27 @@ JobOfferStudies:
     study_id:
       type: integer
       primary: true
+
+JobLanguageSkills:
+  columns:
+    job_offer_id:
+      type: integer
+      primary: true
+    language_id:
+      type: integer
+      primary: true
+
+JobRequiredSkills:
+  columns:
+    job_offer_id:
+      type: integer
+      primary: true
+    skill_id:
+      type: integer
+      primary: true
+
+Language:
+  columns:
+    name: string(50)
+
+

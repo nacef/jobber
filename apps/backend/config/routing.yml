@@ -1,3 +1,12 @@
+application:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Application
+    module:               application
+    prefix_path:          /application
+    column:               id
+    with_wildcard_routes: true
+
 job_offer:
   class: sfDoctrineRouteCollection
   options:

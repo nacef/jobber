@@ -20,6 +20,44 @@ Study:
     name: Bac+5
   Study_5:
     name: Master
+JobOffer:
+  JobOffer_1:
+    job_reference: ING210211
+    internal_title: 'Ingénieur système'
+    external_title: 'Administrateur réseaux et systèmes'
+    Status: Status_2
+    openings_number: '1'
+    openings_remaining: '1'
+    start_date: '2011-07-01'
+    end_date: '2011-10-31'
+    asap: true
+    opening_cause: '1'
+    is_active: true
+    cause_comments: 'Cause comments'
+    JobFamily: JobFamily_2
+    Location: Location_1
+    Assignment: Assignment_1
+    mission: 'Texte mission'
+    Experience: Experience_3
+    required_experience_description: 'Required experience description'
+    required_skills_description: 'Required skills description'
+    required_education_description: 'Required education description'
+    is_budgeted: true
+    salary: '1000'
+    ContractKind: ContractKind_4
+    created_at: '2011-05-24 00:00:00'
+    updated_at: '2011-05-24 21:02:00'
+Status:
+  Status_1:
+    name: Planned
+  Status_2:
+    name: Published
+  Status_3:
+    name: Closed
+JobOfferStudies:
+  JobOfferStudies_1_4:
+    JobOffer: JobOffer_1
+    Study: Study_4
 Experience:
   Experience_1:
     name: Débutant
@@ -40,3 +78,59 @@ Location:
     name: Monastir
   Location_5:
     name: Sousse
+JobRequiredSkills:
+  JobRequiredSkills_1_4:
+    JobOffer: JobOffer_1
+    skill_id: '4'
+  JobRequiredSkills_1_5:
+    JobOffer: JobOffer_1
+    skill_id: '5'
+JobFamily:
+  JobFamily_1:
+    name: Achats
+  JobFamily_2:
+    name: Administratif
+  JobFamily_3:
+    name: Communication
+  JobFamily_4:
+    name: Informatique
+Skill:
+  Skill_1:
+    name: 'Banque - Assurance'
+  Skill_2:
+    name: 'Commerce - Commerce international - Vente'
+  Skill_3:
+    name: Communication
+  Skill_4:
+    name: 'Informatique - Télécommunications'
+  Skill_5:
+    name: Management
+Language:
+  Language_1:
+    name: Anglais
+  Language_2:
+    name: Allemand
+  Language_3:
+    name: Italien
+  Language_4:
+    name: Espagnol
+ContractKind:
+  ContractKind_1:
+    name: 'Alternance / Apprentissage'
+  ContractKind_2:
+    name: 'CDD temps complet'
+  ContractKind_3:
+    name: 'CDD temps partiel'
+  ContractKind_4:
+    name: 'CDI temps complet'
+  ContractKind_5:
+    name: 'CDI temps partiel'
+  ContractKind_6:
+    name: Stage
+JobLanguageSkills:
+  JobLanguageSkills_1_1:
+    JobOffer: JobOffer_1
+    Language: Language_1
+  JobLanguageSkills_1_2:
+    JobOffer: JobOffer_1
+    Language: Language_2

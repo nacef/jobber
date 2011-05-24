@@ -1,23 +1,21 @@
 generator:
   class: sfDoctrineGenerator
   param:
-    model_class:           JobOffer
+    model_class:           Application
     theme:                 admin
     non_verbose_templates: true
     with_show:             false
     singular:              ~
     plural:                ~
-    route_prefix:          job_offer
+    route_prefix:          application
     with_doctrine_route:   true
     actions_base_class:    sfActions
 
     config:
       actions: ~
       fields:  ~
-      list:
-        display: [job_reference, internal_title, status, is_active, created_at]
-      filter:
-        display: [job_reference, internal_title, status, is_active, created_at]      
+      list:    ~
+      filter:  ~
       form:    ~
       edit:    ~
       new:     ~
