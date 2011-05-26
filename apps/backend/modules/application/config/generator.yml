@@ -2,7 +2,7 @@ generator:
   class: sfDoctrineGenerator
   param:
     model_class:           Application
-    theme:                 admin
+    theme:                 jobber
     non_verbose_templates: true
     with_show:             false
     singular:              ~
@@ -16,6 +16,11 @@ generator:
       fields:  ~
       list:    ~
       filter:  ~
-      form:    ~
+      form:
+        display:
+          Personal_informations: [civil_status, first_name, last_name, birth_date, nationality_1, nationality_2, tel, mobile, email]
+          Professional_informations: [is_employed, current_job, activity, cv, cover_letter, work_experience, work_experience_description]
+          Skills_informations: [education_description, studies_list, skills_list, languages_list]
+          Application_informations: [job_offer_id, availability_period, availability_infos, job_wished, wished_location, is_mobile, mobility_area, wished_salary]
       edit:    ~
       new:     ~

@@ -9,6 +9,17 @@ Assignment:
     name: Sud
   Assignment_5:
     name: Est
+Nationality:
+  Nationality_1:
+    name: Tunisienne
+  Nationality_2:
+    name: Française
+  Nationality_3:
+    name: Britannique
+  Nationality_4:
+    name: Américaine
+  Nationality_5:
+    name: Allemande
 Study:
   Study_1:
     name: Baccalauréat
@@ -105,6 +116,15 @@ Skill:
     name: 'Informatique - Télécommunications'
   Skill_5:
     name: Management
+AvailabilityPeriod:
+  AvailabilityPeriod_1:
+    name: immediate
+  AvailabilityPeriod_2:
+    name: '1 month'
+  AvailabilityPeriod_3:
+    name: '3 months'
+  AvailabilityPeriod_4:
+    name: 'over 3 months'
 Language:
   Language_1:
     name: Anglais
@@ -134,3 +154,10 @@ JobLanguageSkills:
   JobLanguageSkills_1_2:
     JobOffer: JobOffer_1
     Language: Language_2
+MobilityArea:
+  MobilityArea_1:
+    name: 'mobilité régionale'
+  MobilityArea_2:
+    name: 'mobilité nationale'
+  MobilityArea_3:
+    name: 'mobilité internationale'

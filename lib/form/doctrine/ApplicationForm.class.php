@@ -12,5 +12,14 @@ class ApplicationForm extends BaseApplicationForm
 {
   public function configure()
   {
+    unset($this['created_at'], $this['updated_at']);
+    
+    $this->widgetSchema['civil_status'] = new sfWidgetFormChoice(array(
+        'choices' => array(
+            civilStatusType::MRS => 'Mrs',
+            civilStatusType::MS  => 'Ms',
+            civilStatusType::MR =>  'Mr',            
+        )
+    ));
   }
 }
